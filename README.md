@@ -126,3 +126,5 @@ component-1.html -> This brings together the UI Control, the service and how to 
 ### Additional Polymer resources
 
 [![Polymer on Youtube](http://img.youtube.com/vi/HgJ0XCyBwzY/0.jpg)](https://www.youtube.com/watch?v=HgJ0XCyBwzY)
+
+[Check out the Vaadin open source community code](https://github.com/vaadin/vaadin-grid)
