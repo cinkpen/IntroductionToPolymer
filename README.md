@@ -29,3 +29,11 @@ routing for the app:
     polymer serve
 
 
+### What's in this example
+
+index.html -> Loads the Main component with a couple of properties
+
+```
+ <my-app api="https://jsonplaceholder.typicode.com" qty="10"></my-app>
+```
+
