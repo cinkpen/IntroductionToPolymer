@@ -121,3 +121,8 @@ component-1.html -> This brings together the UI Control, the service and how to 
     <service-1 id="service1" api="[[api]]"></service-1>
   </template>
 ```
+
+
+### Additional Polymer resources
+
+[![Polymer on Youtube](http://img.youtube.com/vi/HgJ0XCyBwzY/0.jpg)](https://www.youtube.com/watch?v=HgJ0XCyBwzY)
