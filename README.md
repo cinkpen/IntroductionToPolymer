@@ -36,7 +36,7 @@ This application fetches data from the jsonplaceholder.typecode.com RESTful play
 
 index.html -> Loads the Main component with a couple of properties
 
-```javascript
+```html
  <my-app api="https://jsonplaceholder.typicode.com" qty="10"></my-app>
 ```
 
@@ -99,7 +99,7 @@ Often it is useful to use Observables in the code - so that we can evolve into u
 
 component-1.html -> This brings together the UI Control, the service and how to bind arrays of data
 
-```javascript
+```html
 <template>
     <style>
       :host {
