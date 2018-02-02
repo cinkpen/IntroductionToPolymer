@@ -12,6 +12,15 @@ Second, install [Bower](https://bower.io/) using [npm](https://www.npmjs.com)
 
     npm install -g bower
 
+
+### Clone this repository
+
+git clone https://github.com/cinkpen/IntroductionToPolymer
+
+### Run bower 
+
+bower install
+
 ### Start the development server
 
 This command serves the app at `http://127.0.0.1:8081` and provides basic URL
