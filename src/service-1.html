@@ -1,0 +1,58 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<script src="../bower_components/rxjs/dist/rx.all.js"></script>
+
+
+<dom-module id="service-1">
+    <template>
+        <hr/> I am a service running at endpoint: [[api]]
+    </template>
+    <script>
+        class Service1 extends Polymer.Element {
+            static get is() { return 'service-1'; }
+
+            static get properties() {
+                return {
+                    api: String
+                }
+            }
+
+            ready() {
+                super.ready();
+                console.log(Service1.is, this.api);
+            }
+
+            getData() {
+                var observable = Rx.Observable.create(observer => {
+                    var root = this.api;
+                    var url = root + "/posts";
+
+                    fetch(url).then(response => {
+                        response.json()
+                            .then(data => {
+                                for (var i = 0, len = data.length; i < len; i++) {
+                                    observer.next(data[i]);
+                                }
+                            });
+                    })
+                });
+                return observable;
+            }
+
+            handleResponse(data) {
+                console.log(data.detail.response);
+            }
+        }
+
+        window.customElements.define(Service1.is, Service1);
+    </script>
+</dom-module>

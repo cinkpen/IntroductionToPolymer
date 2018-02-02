@@ -1,0 +1,43 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="search-test">
+  <template>
+    <style>
+      :host {
+        display: block;
+        padding: 10px;
+      }
+    </style>
+    <input placeholder="Please find something" id="input1">
+  </template>
+
+  <script>
+    class SearchTest extends Polymer.Element {
+      static get is() { return 'search-test'; }
+
+      static get properties() {
+        return {
+          debounce: {
+            value: 300,
+            type: Object
+          }
+        }
+      }
+
+      ready() {
+        super.ready();
+        var observable = Rx.Observable.fromEvent(this.$.input1, "keyup")
+          .map(event => event.target.value)
+          .debounce(this.debounce)
+          .distinctUntilChanged();
+
+        observable.subscribe(data => {
+          console.log(data);
+          this.dispatchEvent(new CustomEvent('changed', { detail: data }));
+        });
+      }
+    }
+
+    window.customElements.define(SearchTest.is, SearchTest);
+  </script>
+</dom-module>

@@ -1,0 +1,32 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="user-1">
+  <template>
+    <style>
+       :host {
+        display: block;
+
+        padding: 10px;
+      }
+    </style>
+    <span title="[[data.id]]">[[data.title]]</span>
+  </template>
+
+  <script>
+    class User1 extends Polymer.Element {
+      static get is() { return 'user-1'; }
+
+      static get properties() {
+        return {
+          data: Object
+        }
+      }
+
+      ready() {
+        super.ready();
+      }
+    }
+
+    window.customElements.define(User1.is, User1);
+  </script>
+</dom-module>
